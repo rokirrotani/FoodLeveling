@@ -1,0 +1,13 @@
+{
+  "name": "shadow-log",
+  "version": "1.0.0",
+  "description": "Solo Leveling Fitness Tracker — local full-stack app",
+  "scripts": {
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "install:all": "cd frontend && npm install && cd ../backend && npm install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
