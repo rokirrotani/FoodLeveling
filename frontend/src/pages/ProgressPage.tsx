@@ -44,7 +44,7 @@ export default function ProgressPage() {
   if (loading) return <div className="loading">⏳ Caricamento progressi...</div>;
   if (!summary) return null;
 
-  const fmtDate = (d: string) => dayjs(d).format("DD/MM");
+  const fmtDate = (d: unknown) => dayjs(String(d)).format("DD/MM");
 
   return (
     <div className="page">
@@ -91,7 +91,7 @@ export default function ProgressPage() {
               <Tooltip
                 contentStyle={{ background: "#1a1a2e", border: "1px solid #7c3aed", borderRadius: 8 }}
                 labelFormatter={fmtDate}
-                formatter={(v: number) => [`${v} kg`, "Peso"]}
+                formatter={(v: unknown) => [`${Number(v).toFixed(1)} kg`, "Peso"]}
               />
               <Line type="monotone" dataKey="weight" stroke="#7c3aed" strokeWidth={2} dot={{ fill: "#7c3aed" }} />
             </LineChart>
